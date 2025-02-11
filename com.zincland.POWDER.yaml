@@ -1,0 +1,27 @@
+id: com.zincland.POWDER
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+command: powder
+modules:
+  - name: powder
+    buildsystem: simple
+    build-commands:
+        # POWDER seems to require -funsigned-char to build.
+        # -O3 is added to CXXFLAGS by default if it's empty, so I'm passing it here.
+      - CXXFLAGS="-O3 -funsigned-char" ./buildall.sh
+      - install -Dm755 powder /app/bin/powder
+    sources:
+      - type: archive
+        url: http://www.zincland.com/powder/release/powder118_src.tar.gz
+        sha256: 4e812f3972c7dd1ff2403557d1cd891a98470f59ccf09bc03ce79dafd118f3d7
+    modules:
+      - 'shared-modules/SDL/sdl12-compat.json'
+      # - 'shared-modules/SDL/SDL-1.2.15.json'
+finish-args:
+    - --share=ipc
+    - --socket=x11
+    - --device=dri
+    #- --device=input
+    - --socket=pulseaudio
+    #- --filesystem=host

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.zincland.POWDER</id>
+
+  <name>POWDER</name>
+  <summary>A Roguelike designed for the Gameboy Advance and Nintendo DS.</summary>
+
+  <metadata_license>FSFAP</metadata_license><!-- TODO -- invalid because description is not permissively licensed -->
+  <project_license>LicenseRef-proprietary</project_license>
+
+  <description>
+    <p>
+      To understand POWDER, you should first understand roguelikes. &quot;Roguelike&quot; is a term applied to a wide variety of games which share a common inspiration from the game Rogue. A non-exhaustive list of such games would be: ADOM, Nethack, Crawl, Diablo (I &amp; II), Moria, and Angband. My apologies to the many excellent roguelikes I didn&apos;t list. What characterizes these games? The exact specifications are a matter of debate - indeed, I may receive hate mail for including Diablo - but I shall try to write a few:
+    </p>
+    <ul>
+      <li>Tactical play. The unit of action is based on the individual adventurer. The game is not twitch oriented (like Quake, rewarding reflexes &amp; well trained actions) nor is it strategy oriented (like Civilizations or Warcraft, requiring working on the large picture)</li>
+      <li>Based in Hack and Slash. A roguelike isn&apos;t primarily about plot development or telling a story. It is about killing things and acquiring treasure.</li>
+      <li>Random games. A roguelike is a dungeon crawler where no two games are the same. The maps are different, the items are different, there are no guaranteed win paths.</li>
+      <li>Permadeath. You die, that is it. No restoring a savegame. Good roguelikes delete your save game after loading them. This is compensated by the replayability of the game.</li>
+      <li>Complex interactions of properties. While the commands for a roguelike are simple, the potential interactions are not. My favourite example is equipping a silver ring as a weapon in order to damage a creature vulnerable to silver, but not one&apos;s other weapons. [Editor: This matches the Hack branch of the roguelike tree, not the Angband branch]</li>
+      <li>Steam rolling monsters. If a critter is in your way, and weak, you shouldn&apos;t even notice it is there.</li>
+    </ul>
+    <p>
+      For more information about roguelikes there is the Rogue Basin, a Wiki documenting this genre, and the Temple of the Roguelike, a newsite tracking developments in the field.
+    </p>
+    <p>
+      Having defined Roguelike, POWDER is easy to describe: A Roguelike designed for the Gameboy Advance and Nintendo DS.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">com.zincland.POWDER.desktop</launchable>
+</component>

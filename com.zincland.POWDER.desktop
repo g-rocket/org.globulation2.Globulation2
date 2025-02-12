@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.5
+Type=Application
+
+Name=POWDER
+Comment=A Roguelike designed for the Gameboy Advance and Nintendo DS.
+Categories=Game;AdventureGame;
+
+Icon=com.zincland.POWDER
+Exec=powder
+Terminal=false

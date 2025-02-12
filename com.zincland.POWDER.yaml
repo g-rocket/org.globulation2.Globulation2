@@ -4,13 +4,20 @@ runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: powder
 modules:
-  - name: powder
+  - name: POWDER
     buildsystem: simple
     build-commands:
         # POWDER seems to require -funsigned-char to build.
         # -O3 is added to CXXFLAGS by default if it's empty, so I'm passing it here.
-      - CXXFLAGS="-O3 -funsigned-char" ./buildall.sh
-      - install -Dm755 powder /app/bin/powder
+      - CXXFLAGS="-O3 -funsigned-char" ./buildall.sh --use-home-dir
+      - install -Dm755 powder ${FLATPAK_DEST}/bin/powder
+
+      - install -Dm0644 README.TXT ${FLATPAK_DEST}/share/doc/powder/README.TXT
+      - install -Dm0644 LICENSE.TXT ${FLATPAK_DEST}/share/doc/powder/LICENSE.TXT
+      - install -Dm0644 CREDITS.TXT ${FLATPAK_DEST}/share/doc/powder/CREDITS.TXT
+
+      - ffmpeg -i gfx/icon_sdl.bmp $FLATPAK_ID.png
+      - install -Dm0644 $FLATPAK_ID.png ${FLATPAK_DEST}/share/icons/hicolor/32x32/apps/$FLATPAK_ID.png
     sources:
       - type: archive
         url: http://www.zincland.com/powder/release/powder118_src.tar.gz
@@ -18,6 +25,18 @@ modules:
     modules:
       - 'shared-modules/SDL/sdl12-compat.json'
       # - 'shared-modules/SDL/SDL-1.2.15.json'
+
+  - name: POWDER-metainfo-desktopfile-icon
+    buildsystem: simple
+    build-commands:
+      - install -Dm0644 $FLATPAK_ID.metainfo.xml ${FLATPAK_DEST}/share/metainfo/$FLATPAK_ID.metainfo.xml
+      - install -Dm0644 $FLATPAK_ID.desktop ${FLATPAK_DEST}/share/applications/$FLATPAK_ID.desktop
+    sources:
+      - type: file
+        path: com.zincland.POWDER.metainfo.xml
+      - type: file
+        path: com.zincland.POWDER.desktop
+
 finish-args:
     - --share=ipc
     - --socket=x11
@@ -25,3 +44,4 @@ finish-args:
     #- --device=input
     - --socket=pulseaudio
     #- --filesystem=host
+    - --persist=.powder

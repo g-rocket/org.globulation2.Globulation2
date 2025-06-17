@@ -2,10 +2,10 @@
 Version=1.5
 Type=Application
 
-Name=POWDER
-Comment=A Roguelike designed for the Gameboy Advance and Nintendo DS.
-Categories=Game;AdventureGame;
+Name=Globulation 2
+Comment=Free and Open Source real time strategy game with a new take on micro-management
+Categories=Game;StrategyGame;
 
-Icon=com.zincland.POWDER
-Exec=powder
+Icon=org.globulation2.Globulation2
+Exec=glob2
 Terminal=false

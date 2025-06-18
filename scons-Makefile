@@ -1,5 +1,0 @@
-all:
-	echo "done"
-
-install:
-	python2 setup.py install --prefix=/app

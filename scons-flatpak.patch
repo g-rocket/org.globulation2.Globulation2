@@ -1,0 +1,12 @@
+--- SConstruct.orig	2025-06-18 13:08:48.455011050 -0700
++++ SConstruct	2025-06-18 13:08:50.010418538 -0700
+@@ -246,6 +246,9 @@
+     if isDarwinPlatform:
+         env.Append(LIBPATH=["/sw/lib"])
+         env.Append(CPPPATH=["/sw/include"])
++    env.Append(LIBPATH=['/app/lib'])
++    env.Append(CPPPATH=['/app/include'])
++    env.PrependENVPath('PATH', '/app/bin')
+     configure(env)
+     env.Append(CPPPATH=['#libgag/include', '#'])
+     if env['release']:

@@ -23,16 +23,31 @@ modules:
   - name: Globulation2
     buildsystem: simple
     build-commands:
+      - patch -p0 -i "glob2-0.9.4.1-gcc44.patch"
+      - patch -p1 -i "fix-ftbfs-gcc49.diff"
+      - patch -p1 -i "glob2-gcc6.patch"
+      - patch -p1 -i "glob2-scons3.patch"
+      - patch -p1 -i "glob2-bool.patch"
+      - patch -p1 -i "scons-python3.patch"
+      - patch -p1 -i "SConstruct-explicit-add-S_D_E.patch"
+
       - scons BINDIR=/app/bin INSTALLDIR=/app/share
       - scons install
     sources:
       - type: archive
         url: http://dl.sv.nongnu.org/releases/glob2/0.9.4/glob2-0.9.4.4.tar.gz
         sha256: 0f4d898ec6b05ce27b4a12ef242cc26571304b90d2509932a4743c71311314b8
+      - type: git
+        url: https://gitlab.archlinux.org/archlinux/packaging/packages/glob2.git
+        tag: 0.9.4.4-52
+        commit: 7fcc584578f3f961f416acffbb59481d74c80eb2
     modules:
       # - 'shared-modules/python2.7/python-2.7.json'
-      - 'shared-modules/SDL/sdl12-compat.json'
-      # - 'shared-modules/SDL/SDL-1.2.15.json'
+      # - 'shared-modules/SDL/sdl12-compat.json'
+      - 'shared-modules/SDL/SDL-1.2.15.json'
+      - 'shared-modules/SDL/SDL_image-1.2.12.json'
+      - 'shared-modules/SDL/SDL_net-1.2.8.json'
+      - 'shared-modules/SDL/SDL_ttf-2.0.11.json'
       - 'shared-modules/glu/glu-9.json'
 
 finish-args:

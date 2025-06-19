@@ -63,6 +63,14 @@ modules:
       - 'shared-modules/SDL/SDL_ttf-2.0.11.json'
       # - 'shared-modules/glu/glu-9.json'
 
+  - name: glob2-metainfo
+    buildsystem: simple
+    build-commands:
+      - install -Dm0644 $FLATPAK_ID.metainfo.xml ${FLATPAK_DEST}/share/metainfo/$FLATPAK_ID.metainfo.xml
+    sources:
+      - type: file
+        path: org.globulation2.Glob2.metainfo.xml
+
 finish-args:
     - --share=ipc
     - --socket=x11

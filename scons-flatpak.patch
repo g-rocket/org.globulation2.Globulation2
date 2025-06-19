@@ -36,7 +36,10 @@
      env.Alias("install", env["INSTALLDIR"]+"/icons/hicolor/128x128/apps/")
 --- data/glob2.desktop.orig	2025-06-18 19:20:50.130034369 -0700
 +++ data/glob2.desktop	2025-06-18 19:20:55.147871840 -0700
-@@ -4,7 +4,7 @@
+@@ -1,12 +1,10 @@
+ [Desktop Entry]
+ Version=1.0
+-Encoding=UTF-8
  Name=Globulation 2
  Comment=An innovative new strategy game
  Exec=glob2
@@ -45,6 +48,9 @@
  Terminal=false
  X-MultipleArgs=false
  Type=Application
+-Categories=Application;Game;StrategyGame;
+-GenericName[en_US]=
++Categories=Game;StrategyGame;
 --- data/SConscript.orig	2025-06-18 19:18:49.601820453 -0700
 +++ data/SConscript	2025-06-18 19:18:51.830147313 -0700
 @@ -10,7 +10,7 @@

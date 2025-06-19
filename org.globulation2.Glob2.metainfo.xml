@@ -3,16 +3,41 @@
   <id>org.globulation2.Glob2</id>
 
   <name>Globulation 2</name>
-  <summary>Free and Open Source real time strategy game with a new take on micro-management.</summary>
+  <summary>Free and Open Source real time strategy game with a new take on micro-management</summary>
 
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-3.0-only</project_license>
 
   <description>
     <p>
-      TODO: fill this in
+      Globulation 2 brings a new type of gameplay to RTS games. The player chooses
+      the number of units to assign to various tasks, and the units do their best to
+      satisfy the requests. This allows players to manage more units and focus on
+      strategy rather than individual unit's jobs. Globulation 2 also features AI
+      allowing single-player games or any possible combination of human-computer
+      teams. Also included is a scripting language for versatile gameplay or
+      tutorials and an integrated map editor. Globulation2 can be played in single
+      player mode, through your local network, or over the Internet with Ysagoon
+      Online Gaming (or YOG for short).
     </p>
   </description>
 
-  <launchable type="desktop-id">org.globulation2.Globulation2.desktop</launchable>
+  <url type="homepage">https://globulation2.org/</url>
+  <developer id="org.globulation2">
+    <!-- TODO: no idea what this should be -->
+    <name>Globulation 2 development community</name>
+  </developer>
+
+  <content_rating type="oars-1.0">
+    <!-- TODO: try harder to make sure this is true -->
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+    <content_attribute id="violence-bloodshed">mild</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="0.9.4.4" date="2010-01-09" />
+    <!-- TODO: is there any point in adding past releases here?-->
+  </releases>
+
+  <launchable type="desktop-id">org.globulation2.Glob2.desktop</launchable>
 </component>

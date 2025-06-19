@@ -1,4 +1,4 @@
-id: org.globulation2.glob2
+id: org.globulation2.Glob2
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
@@ -31,9 +31,10 @@ modules:
       - patch -p1 -i "SConstruct-explicit-add-S_D_E.patch"
 
         # Make it look for libraries in /app
+        # and patch IDs glob2 -> org.globulation2.Glob2
       - patch -p0 -i "scons-flatpak.patch"
 
-      - scons LIBPATH=/usr/lib:/app/lib BINDIR=/app/bin INSTALLDIR=/app/share
+      - scons release=True BINDIR=/app/bin INSTALLDIR=/app/share
       - scons install
     sources:
       - type: archive
@@ -69,4 +70,4 @@ finish-args:
     #- --device=input
     - --socket=pulseaudio
     #- --filesystem=host
-    #- --persist=.powder
+    - --persist=.glob2

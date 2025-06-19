@@ -10,3 +10,49 @@
      configure(env)
      env.Append(CPPPATH=['#libgag/include', '#'])
      if env['release']:
+--- data/icons/SConscript.orig	2025-06-18 19:16:49.776630095 -0700
++++ data/icons/SConscript	2025-06-18 19:16:51.052631986 -0700
+@@ -9,15 +9,15 @@
+             PackTar(env["TARFILE"], file)
+     
+     PackTar(env["TARFILE"], "SConscript")
+-    env.Install(env["INSTALLDIR"]+"/icons/hicolor/16x16/apps/", "glob2-icon-16x16.png")
++    env.InstallAs(env["INSTALLDIR"]+"/icons/hicolor/16x16/apps/org.globulation2.Glob2.png", "glob2-icon-16x16.png")
+     env.Alias("install", env["INSTALLDIR"]+"/icons/hicolor/16x16/apps/")
+-    env.Install(env["INSTALLDIR"]+"/icons/hicolor/24x24/apps/", "glob2-icon-24x24.png")
++    env.InstallAs(env["INSTALLDIR"]+"/icons/hicolor/24x24/apps/org.globulation2.Glob2.png", "glob2-icon-24x24.png")
+     env.Alias("install", env["INSTALLDIR"]+"/icons/hicolor/24x24/apps/")
+-    env.Install(env["INSTALLDIR"]+"/icons/hicolor/32x32/apps/", "glob2-icon-32x32.png")
++    env.InstallAs(env["INSTALLDIR"]+"/icons/hicolor/32x32/apps/org.globulation2.Glob2.png", "glob2-icon-32x32.png")
+     env.Alias("install", env["INSTALLDIR"]+"/icons/hicolor/32x32/apps/")
+-    env.Install(env["INSTALLDIR"]+"/icons/hicolor/48x48/apps/", "glob2-icon-48x48.png")
++    env.InstallAs(env["INSTALLDIR"]+"/icons/hicolor/48x48/apps/org.globulation2.Glob2.png", "glob2-icon-48x48.png")
+     env.Alias("install", env["INSTALLDIR"]+"/icons/hicolor/48x48/apps/")
+-    env.Install(env["INSTALLDIR"]+"/icons/hicolor/64x64/apps/", "glob2-icon-64x64.png")
++    env.InstallAs(env["INSTALLDIR"]+"/icons/hicolor/64x64/apps/org.globulation2.Glob2.png", "glob2-icon-64x64.png")
+     env.Alias("install", env["INSTALLDIR"]+"/icons/hicolor/16x16/apps/")
+-    env.Install(env["INSTALLDIR"]+"/icons/hicolor/128x128/apps/", "glob2-icon-128x128.png")
++    env.InstallAs(env["INSTALLDIR"]+"/icons/hicolor/128x128/apps/org.globulation2.Glob2.png", "glob2-icon-128x128.png")
+     env.Alias("install", env["INSTALLDIR"]+"/icons/hicolor/128x128/apps/")
+--- data/glob2.desktop.orig	2025-06-18 19:20:50.130034369 -0700
++++ data/glob2.desktop	2025-06-18 19:20:55.147871840 -0700
+@@ -4,7 +4,7 @@
+ Name=Globulation 2
+ Comment=An innovative new strategy game
+ Exec=glob2
+-Icon=glob2-icon-48x48
++Icon=org.globulation2.Glob2
+ Terminal=false
+ X-MultipleArgs=false
+ Type=Application
+--- data/SConscript.orig	2025-06-18 19:18:49.601820453 -0700
++++ data/SConscript	2025-06-18 19:18:51.830147313 -0700
+@@ -10,7 +10,7 @@
+             env.Install(env["INSTALLDIR"] + "/glob2/data", file)
+         
+     
+-    env.Install(env["INSTALLDIR"] + "/applications", "glob2.desktop")
++    env.InstallAs(env["INSTALLDIR"] + "/applications/org.globulation2.Glob2.desktop", "glob2.desktop")
+     env.Alias("install", env["INSTALLDIR"]+"/glob2/data")
+     env.Alias("install", env["INSTALLDIR"]+"/applications")
+     PackTar(env["TARFILE"], "glob2.desktop")
